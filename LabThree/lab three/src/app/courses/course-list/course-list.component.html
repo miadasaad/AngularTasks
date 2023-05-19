@@ -1,0 +1,29 @@
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Lec Hours</th>
+                <th scope="col">Lab Hours</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let item of courses">
+                <td scope="row">{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.crsHours}}</td>
+                <td>{{item.labHours}}</td>
+                <td>
+                    <!-- <button (click)="detailsId=item.id">details</button> -->
+                    <a class="btn btn-primary" [routerLink]="['/courses','details',item.id]"  >details</a>
+                    <button class="btn btn-primary mx-2" (click)="delete(item.id)">delete</button>
+                    <a class="btn btn-primary" [routerLink]="['/courses','update',item.id]"  >details</a>
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+<!-- <app-course-details [crsId]="detailsId"></app-course-details> -->

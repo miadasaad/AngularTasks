@@ -1,0 +1,27 @@
+<a routerLink="add">Add</a>
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let item of depts">
+                <td scope="row">{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.loc}}</td>
+                <td>
+                    <a class="btn btn-primary mx-2" [routerLink]="['details',item.id]" routerLinkActive="router-link-active" >details</a>
+                    <a class="btn btn-primary mx-2" [routerLink]="['update',item.id]" routerLinkActive="router-link-active" >update</a>
+                    <!-- <button class="btn btn-primary" (click)="delete(item.id)">delete</button> -->
+                    <a class="btn btn-primary mx-2" [routerLink]="['delete',item.id]" routerLinkActive="router-link-active" >delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
